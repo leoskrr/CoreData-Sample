@@ -58,16 +58,40 @@
 		357F0904255D8B6800D53AAB /* CD-ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				357F0905255D8B6800D53AAB /* AppDelegate.swift */,
-				357F0907255D8B6800D53AAB /* SceneDelegate.swift */,
-				357F0909255D8B6800D53AAB /* ViewController.swift */,
-				357F090B255D8B6800D53AAB /* Main.storyboard */,
-				357F0911255D8B6B00D53AAB /* Assets.xcassets */,
-				357F0913255D8B6B00D53AAB /* LaunchScreen.storyboard */,
+				35ABAEDB255D8DF5000F87A3 /* models */,
+				357F091E255D8BFC00D53AAB /* views */,
+				357F091D255D8BDB00D53AAB /* controllers */,
 				357F0916255D8B6B00D53AAB /* Info.plist */,
 				357F090E255D8B6800D53AAB /* CD_ToDo.xcdatamodeld */,
 			);
 			path = "CD-ToDo";
+			sourceTree = "<group>";
+		};
+		357F091D255D8BDB00D53AAB /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				357F0905255D8B6800D53AAB /* AppDelegate.swift */,
+				357F0907255D8B6800D53AAB /* SceneDelegate.swift */,
+				357F0909255D8B6800D53AAB /* ViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		357F091E255D8BFC00D53AAB /* views */ = {
+			isa = PBXGroup;
+			children = (
+				357F0911255D8B6B00D53AAB /* Assets.xcassets */,
+				357F0913255D8B6B00D53AAB /* LaunchScreen.storyboard */,
+				357F090B255D8B6800D53AAB /* Main.storyboard */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		35ABAEDB255D8DF5000F87A3 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
