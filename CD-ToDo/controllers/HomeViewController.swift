@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //Trocar o tipo de "Any" para o tipo da nossa entidade de task
-    var tasks: [Task] = []
+    var tasks: [Any] = []
     
     @IBOutlet weak var tasksTableView: UITableView!
     
@@ -22,8 +22,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TaskTableViewCell
         
         //Completar o preenchimento da célula de task
-        let task = tasks[indexPath.row]
-        cell.fillCellWithTitle(task.title)
+        //let task = tasks[indexPath.row]
         
         return cell
     }
@@ -34,37 +33,28 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         setUpTasksArray()
-        tasksTableView.reloadData()
-
+        //tasksTableView.reloadData()
     }
         
     //Função usada para adicionar as tasks do Core Data na variável "tasks"
     func setUpTasksArray(){
-        let fetchedTasks = TaskRepository.shared.fetchTasks()
         
-        if fetchedTasks != nil {
-            tasks = fetchedTasks!
-        } else {
-            tasks = []
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let createTaskVC = segue.destination as! HandleTaskViewController
         
         if segue.identifier == "editTaskSegue" {
-            guard let selectedCellIndexPath = tasksTableView.indexPathForSelectedRow else {
-                return
-            }
-            
-            let index = selectedCellIndexPath.row
-            let selectedTask = tasks[index]
+            //guard let selectedCellIndexPath = tasksTableView.indexPathForSelectedRow else {
+            //    return
+            //}
+            //
+            //let index = selectedCellIndexPath.row
+            //let selectedTask = tasks[index]
             
             createTaskVC.shouldEditTask = true
-            createTaskVC.editTask = selectedTask
         } else {
             createTaskVC.shouldEditTask = false
-            createTaskVC.editTask = nil
         }
     }
 }

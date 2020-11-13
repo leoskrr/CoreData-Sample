@@ -13,19 +13,11 @@ class HandleTaskViewController: UIViewController {
     @IBOutlet weak var trashBarButton: UIBarButtonItem!
     
     var shouldEditTask: Bool = false
-    var editTask: Task?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if shouldEditTask {
-            guard let task = editTask else {
-                return
-            }
-            
-            titleTextField.text = task.title
-            descTextField.text = task.desc
-            
             trashBarButton.isEnabled = true
         }
     }
@@ -39,44 +31,14 @@ class HandleTaskViewController: UIViewController {
     
     //Função executada quando o botão "done" for pressionado
     @IBAction func handleDoneButton(_ sender: UIButton) {
-        let taskModel = TaskRepository.shared
         
-        let titleText = titleTextField.text
-        let descText = descTextField.text
+        //let titleText = titleTextField.text
+        //let descText = descTextField.text
         
         if !shouldEditTask {
             //Chamar função para criar uma nova task no nosso container e mostrar alerta de sucesso ou erro
-            createTaskWith(title: titleText, desc: descText, shared: taskModel)
         } else {
             //Chamar função para atualizar a task no nosso container e mostrar alerta de sucesso ou erro
-            updateTaskWith(newTitle: titleText, newDesc: descText, shared: taskModel)
-        }
-    }
-    
-    func createTaskWith(title: String?, desc: String?, shared: TaskRepository){
-        let newTask = shared.createTask(title: title, desc: desc)
-        
-        if let _ = newTask {
-            displayAlertWith(title: "Success", message: "New task created successfully")
-        } else {
-            displayAlertWith(title: "Error", message: "Internal error")
-        }
-    }
-    
-    func updateTaskWith(newTitle: String?, newDesc: String?, shared: TaskRepository) {
-        guard let task = editTask else {
-            return
-        }
-        
-        task.title = newTitle
-        task.desc = newDesc
-        
-        let updateTask = shared.updateTask(task: task)
-        
-        if let _ = updateTask {
-            displayAlertWith(title: "Success", message: "Task updated successfully")
-        } else {
-            displayAlertWith(title: "Error", message: "Internal error")
         }
     }
     
@@ -87,12 +49,6 @@ class HandleTaskViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "No, I am not.", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes, I am.", style: .destructive, handler: {
             _ in
-            guard let task = self.editTask else {
-                return
-            }
-            
-            let taskModel = TaskRepository.shared
-            taskModel.deleteTask(task: task)
             
             self.titleTextField.text = ""
             self.descTextField.text = ""
