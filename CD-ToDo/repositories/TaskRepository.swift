@@ -8,8 +8,8 @@
 import Foundation
 import CoreData
 
-struct TaskModel {
-    static let shared = TaskModel()
+struct TaskRepository {
+    static let shared = TaskRepository()
     
     let persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CD_ToDo")

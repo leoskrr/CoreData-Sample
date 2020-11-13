@@ -14,8 +14,8 @@
 		357F0910255D8B6800D53AAB /* CD_ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 357F090E255D8B6800D53AAB /* CD_ToDo.xcdatamodeld */; };
 		357F0912255D8B6B00D53AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 357F0911255D8B6B00D53AAB /* Assets.xcassets */; };
 		357F0915255D8B6B00D53AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357F0913255D8B6B00D53AAB /* LaunchScreen.storyboard */; };
-		35DE3C72255DD5BC003EDAB6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE3C71255DD5BC003EDAB6 /* TaskModel.swift */; };
-		35DE3C78255DDADC003EDAB6 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE3C77255DDADC003EDAB6 /* CreateTaskViewController.swift */; };
+		35DE3C72255DD5BC003EDAB6 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE3C71255DD5BC003EDAB6 /* TaskRepository.swift */; };
+		35DE3C78255DDADC003EDAB6 /* HandleTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE3C77255DDADC003EDAB6 /* HandleTaskViewController.swift */; };
 		35DE3C7C255DE2DF003EDAB6 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE3C7B255DE2DF003EDAB6 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +29,8 @@
 		357F0911255D8B6B00D53AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		357F0914255D8B6B00D53AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		357F0916255D8B6B00D53AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35DE3C71255DD5BC003EDAB6 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
-		35DE3C77255DDADC003EDAB6 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
+		35DE3C71255DD5BC003EDAB6 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		35DE3C77255DDADC003EDAB6 /* HandleTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleTaskViewController.swift; sourceTree = "<group>"; };
 		35DE3C7B255DE2DF003EDAB6 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,9 +64,9 @@
 		357F0904255D8B6800D53AAB /* CD-ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				35ABAEDB255D8DF5000F87A3 /* models */,
 				357F091E255D8BFC00D53AAB /* views */,
 				357F091D255D8BDB00D53AAB /* controllers */,
+				35ABAEDB255D8DF5000F87A3 /* repositories */,
 				357F0916255D8B6B00D53AAB /* Info.plist */,
 				357F090E255D8B6800D53AAB /* CD_ToDo.xcdatamodeld */,
 			);
@@ -79,7 +79,7 @@
 				357F0905255D8B6800D53AAB /* AppDelegate.swift */,
 				357F0907255D8B6800D53AAB /* SceneDelegate.swift */,
 				357F0909255D8B6800D53AAB /* HomeViewController.swift */,
-				35DE3C77255DDADC003EDAB6 /* CreateTaskViewController.swift */,
+				35DE3C77255DDADC003EDAB6 /* HandleTaskViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -95,12 +95,12 @@
 			path = views;
 			sourceTree = "<group>";
 		};
-		35ABAEDB255D8DF5000F87A3 /* models */ = {
+		35ABAEDB255D8DF5000F87A3 /* repositories */ = {
 			isa = PBXGroup;
 			children = (
-				35DE3C71255DD5BC003EDAB6 /* TaskModel.swift */,
+				35DE3C71255DD5BC003EDAB6 /* TaskRepository.swift */,
 			);
-			path = models;
+			path = repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,10 +176,10 @@
 				35DE3C7C255DE2DF003EDAB6 /* TaskTableViewCell.swift in Sources */,
 				357F0910255D8B6800D53AAB /* CD_ToDo.xcdatamodeld in Sources */,
 				357F090A255D8B6800D53AAB /* HomeViewController.swift in Sources */,
-				35DE3C72255DD5BC003EDAB6 /* TaskModel.swift in Sources */,
+				35DE3C72255DD5BC003EDAB6 /* TaskRepository.swift in Sources */,
 				357F0906255D8B6800D53AAB /* AppDelegate.swift in Sources */,
 				357F0908255D8B6800D53AAB /* SceneDelegate.swift in Sources */,
-				35DE3C78255DDADC003EDAB6 /* CreateTaskViewController.swift in Sources */,
+				35DE3C78255DDADC003EDAB6 /* HandleTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

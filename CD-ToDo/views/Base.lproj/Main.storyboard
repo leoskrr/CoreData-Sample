@@ -79,7 +79,7 @@
         <!--New-->
         <scene sceneID="2Ib-04-VdG">
             <objects>
-                <viewController id="Pzh-ZU-0ty" customClass="CreateTaskViewController" customModule="CD_ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Pzh-ZU-0ty" customClass="HandleTaskViewController" customModule="CD_ToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oJq-O9-Vsy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="trash" id="kwH-Tl-PBu">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
-                                <action selector="deleteItemPressed:" destination="Pzh-ZU-0ty" id="X6M-Zh-wUL"/>
+                                <action selector="deletePressedItem:" destination="Pzh-ZU-0ty" id="0wW-nr-Aaf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
