@@ -43,11 +43,13 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="titleLabel" destination="2Mx-st-K6R" id="ZOu-v7-pf7"/>
+                                            <segue destination="Pzh-ZU-0ty" kind="show" identifier="editTaskSegue" id="UbO-Br-IDO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="fqX-iQ-tnM"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rVW-Vw-lPw"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -67,6 +69,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tasksTableView" destination="BU5-qH-Hjw" id="Eh3-rF-dmq"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1673.913043478261" y="93.75"/>
@@ -90,10 +95,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFA-4a-KvH">
-                                <rect key="frame" x="348" y="493" width="46" height="30"/>
-                                <state key="normal" title="Create"/>
+                                <rect key="frame" x="357" y="493" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
                                 <connections>
-                                    <action selector="createTaskAction:" destination="Pzh-ZU-0ty" eventType="touchUpInside" id="Vbe-Ur-KSu"/>
+                                    <action selector="handleDoneButton:" destination="Pzh-ZU-0ty" eventType="touchUpInside" id="xcx-wX-5bD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -112,13 +117,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="New" image="plus" catalog="system" id="p6E-Vi-gck"/>
                     <navigationItem key="navigationItem" id="3Cx-FC-MC3">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="kwH-Tl-PBu">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="trash" id="kwH-Tl-PBu">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="deleteItemPressed:" destination="Pzh-ZU-0ty" id="X6M-Zh-wUL"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="descTextField" destination="cII-Fj-ozJ" id="QCc-KY-v5U"/>
                         <outlet property="titleTextField" destination="oWu-Wp-BTs" id="iqD-jg-FJ3"/>
+                        <outlet property="trashBarButton" destination="kwH-Tl-PBu" id="zNS-HM-Dc6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFU-Vj-84M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -145,6 +154,9 @@
             <point key="canvasLocation" x="763.768115942029" y="93.75"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UbO-Br-IDO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="plus" catalog="system" width="128" height="113"/>

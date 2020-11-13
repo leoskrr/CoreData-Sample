@@ -12,7 +12,6 @@ struct TaskModel {
     static let shared = TaskModel()
     
     let persistentContainer: NSPersistentContainer = {
-        
         let container = NSPersistentContainer(name: "CD_ToDo")
         container.loadPersistentStores {
             storeDescription, error in
@@ -37,7 +36,7 @@ struct TaskModel {
             try context.save()
             return newTask
         } catch let createError {
-            print("Error creating task: \(createError)")
+            print("Failed to create: \(createError)")
         }
         
         return nil
@@ -52,9 +51,33 @@ struct TaskModel {
             let details = try context.fetch(fetchRequest)
             return details
         } catch let fetchError {
-            print("Error fetching tasks: \(fetchError)")
+            print("Failed to fetch: \(fetchError)")
         }
         
         return nil
+    }
+    
+    func updateTask(task: Task) -> Task? {
+        let context = persistentContainer.viewContext
+        
+        do{
+            try context.save()
+            return task
+        } catch let updateError {
+            print("Failed to update: \(updateError)")
+        }
+        
+        return nil
+    }
+    
+    func deleteTask(task: Task){
+        let context = persistentContainer.viewContext
+        context.delete(task)
+        
+        do{
+            try context.save()
+        }catch let saveError{
+            print("Failed to delete: \(saveError)")
+        }
     }
 }
